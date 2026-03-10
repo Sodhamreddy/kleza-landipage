@@ -25,9 +25,10 @@ $envFile = __DIR__ . '/.env';
 if (file_exists($envFile)) {
     $lines = file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
     foreach ($lines as $line) {
-        if (str_starts_with(trim($line), '#') || !str_contains($line, '='))
+        $trimmed = trim($line);
+        if ($trimmed === '' || $trimmed[0] === '#' || strpos($trimmed, '=') === false)
             continue;
-        [$k, $v] = explode('=', $line, 2);
+        list($k, $v) = explode('=', $trimmed, 2);
         putenv(trim($k) . '=' . trim($v));
     }
 }
