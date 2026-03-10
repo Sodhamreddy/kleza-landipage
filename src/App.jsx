@@ -767,13 +767,13 @@ Kleza brings together a team of skilled digital marketers, certified ad professi
         {/* Left — Logo + tagline */}
         <div className="f-brand">
           <img src={LOGO} alt="Kleza Solutions" />
-          <p>AI-Powered Digital Marketing · Trusted Since 2014</p>
+          <p>AI-Powered Digital Marketing</p>
         </div>
 
         {/* Centre — Address */}
         <div className="f-address">
           <div className="f-addr-item">📍 9331 W 87th St, Overland Park, KS 66212, United States</div>
-          <div className="f-addr-item">📞 <a href="tel:+19138002728">+1 913-800-2728</a> &nbsp;·&nbsp; <a href="tel:+917396146227">+91 739-614-6227</a></div>
+          <div className="f-addr-item">📞 <a href="tel:+19138002728">+1 913-800-2728</a> </div>
           <div className="f-addr-item">✉️ <a href="mailto:info@kleza.io">info@kleza.io</a></div>
         </div>
 
