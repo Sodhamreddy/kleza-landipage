@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* ── PulseBoard-inspired brand palette ── */
+  --b: #0066FF;
+  /* deep blue — primary */
+  --b2: #0052CC;
+  /* darker blue — hover */
+  --b3: #E8F0FF;
+  /* light blue tint */
+  --acc: #10B2E6;
+  /* cyan — accent */
+  --acc2: #0EA1D5;
+  /* darker cyan — hover */
+  --cyan: #10B2E6;
+
+  /* ── Neutral / Dark ── */
+  --ink: #0A1628;
+  /* near-black with blue tint */
+  --ink2: #1A2540;
+  --mid: #4A5568;
+  --dim: #718096;
+  --edge: rgba(16, 178, 230, .12);
+
+  /* ── Backgrounds ── */
+  --bg: #F0F7FF;
+  /* very light cyan-blue tint */
+  --bg2: #FFFFFF;
+  --card: rgba(0, 102, 255, .04);
+
+  /* ── Radii ── */
+  --r: 10px;
+  --rl: 18px;
+  --rx: 28px;
+
+  /* ── Fonts ── */
+  --h: 'Inter', system-ui, sans-serif;
+  --body: 'Inter', system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.W {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.W {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
