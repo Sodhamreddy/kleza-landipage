@@ -37,9 +37,10 @@ const SERVICES = [
     icon: '🤖',
     label: 'AI-Powered Digital Marketing',
     subtitle: 'GEO / AEO Optimization',
-    desc: 'Stay ahead of AI-driven search with Generative Engine Optimization (GEO) and Answer Engine Optimization (AEO). We position your brand to appear in AI overviews, featured snippets, and voice search results — capturing future-ready visibility.',
+    desc: 'We help businesses in Dubai, Canada, the United States, and around the globe to stay ahead of AI-driven search with GEO and AEO, by appearing in AI overviews, featured snippets, and voice results. Then we track, optimize, and scale campaigns for future-ready growth and measurable leads. ',
     features: ['Generative Engine Optimization (GEO)', 'Answer Engine Optimization (AEO)', 'AI Visibility Strategy', 'Structured Data & Schema Markup'],
     color: '#0066FF',
+    cta: 'Start AI-Powered Marketing',
     stat1: { val: '↗ 50%', label: 'TRAFFIC' },
     stat2: { val: '↗ 36%', label: 'CLICK-THROUGH RATE' },
     partners: ['Meta Business Partner', 'Google Partner'],
@@ -53,9 +54,10 @@ const SERVICES = [
     icon: '🔍',
     label: 'SEO Services',
     subtitle: 'Local & Technical SEO',
-    desc: 'Dominate search rankings with our comprehensive SEO approach. From deep technical audits to local market dominance, we build sustainable organic traffic that compounds month over month.',
+    desc: 'We help your business dominate search rankings worldwide with a complete SEO approach. From site audits and keyword strategy to local and multi-location optimization, we build sustainable organic traffic that grows month over month. We then drive higher visibility, more leads, and measurable results. ',
     features: ['Technical SEO Audit & Fixes', 'Local SEO & Google Business Profile', 'Content Strategy & Link Building', 'International & Multi-Location SEO'],
     color: '#10B2E6',
+    cta: 'Boost Your Search Rankings',
     stat1: { val: '↗ 340%', label: 'ORGANIC TRAFFIC' },
     stat2: { val: '↗ 68%', label: 'SEARCH VISIBILITY' },
     partners: ['Google Partner', 'SEMrush Certified'],
@@ -69,9 +71,10 @@ const SERVICES = [
     icon: '📊',
     label: 'Google Ads Management',
     subtitle: 'PPC & Performance Max',
-    desc: 'Maximise every advertising dollar with data-driven Google Ads campaigns. Our certified specialists engineer campaigns that consistently deliver high ROAS across Search, Display, Shopping, and Performance Max.',
+    desc: 'We help your business get the most out of every advertising dollar with expertly crafted Google Ads campaigns. Our Digital marketing experts build, test, and optimize campaigns across Search, Display, YouTube, and Performance Max, ensuring high ROAS and measurable results. ',
     features: ['Search & Shopping Campaigns', 'Performance Max & Display Ads', 'Conversion Rate Optimisation', 'Smart Bidding & Audience Targeting'],
     color: '#0EA5E9',
+    cta: 'Maximise Your Ad ROI',
     stat1: { val: '4.8×', label: 'AVERAGE ROAS' },
     stat2: { val: '↗ 200%', label: 'AD CONVERSIONS' },
     partners: ['Google Premier Partner', 'Meta Business'],
@@ -85,9 +88,10 @@ const SERVICES = [
     icon: '📱',
     label: 'Meta & LinkedIn Ads',
     subtitle: 'Social Paid Advertising',
-    desc: 'Reach your ideal customers where they spend their time. We craft compelling Meta and LinkedIn campaigns that build brand awareness, generate qualified leads, and scale your revenue efficiently.',
+    desc: 'We create high-impact Meta and LinkedIn campaigns that connect your brand with the right audience. From creative design and precise audience targeting to lead generation and retargeting, our digital marketing team ensures every campaign drives results. ',
     features: ['Facebook & Instagram Ads', 'LinkedIn Lead Generation Ads', 'Retargeting & Lookalike Audiences', 'Creative Testing & Optimisation'],
     color: '#0052CC',
+    cta: 'Generate Qualified Leads',
     stat1: { val: '↗ 120%', label: 'LEAD VOLUME' },
     stat2: { val: '-42%', label: 'COST PER LEAD' },
     partners: ['Meta Business Partner', 'LinkedIn Marketing'],
@@ -101,9 +105,10 @@ const SERVICES = [
     icon: '✨',
     label: 'Social Media Management',
     subtitle: 'SMM & Brand Growth',
-    desc: 'Build a brand that your audience loves and trusts. Our social media team creates scroll-stopping content, manages community engagement, and runs campaigns that grow your following into a loyal customer base.',
+    desc: 'We help your business build an authoritative and consistent social media presence across the globe. Our team plans and creates high-quality content, manages community engagement, and runs targeted campaigns to convert followers into customers. By analyzing performance and refining strategies, we ensure every post and campaign drives measurable growth. ',
     features: ['Content Creation & Scheduling', 'Community Management', 'Brand Voice & Strategy', 'Analytics & Monthly Reporting'],
     color: '#0891B2',
+    cta: 'Grow Your Social Presence',
     stat1: { val: '↗ 85%', label: 'ENGAGEMENT RATE' },
     stat2: { val: '98%', label: 'CLIENT RETENTION' },
     partners: ['Meta Business Partner', 'Google Partner'],
@@ -128,23 +133,23 @@ const METRICS = [
 const WHY = [
   {
     icon: '🎯',
-    title: 'Strategy-First Execution',
-    desc: 'Every campaign begins with deep market research and a custom game plan — no cookie-cutter templates. We diagnose before we prescribe so your budget works harder from day one.',
+    title: 'Strategy Comes First ',
+    desc: 'The Kleza team begins by understanding your business, market, and competitors. We create a custom marketing plan based on real data and your goals. This ensures your marketing budget is used where it delivers the best AI Driven results. ',
   },
   {
     icon: '📋',
-    title: 'Full Transparency & Reporting',
-    desc: 'Real-time dashboards and monthly reports with clear KPIs. You always know exactly where your money goes and what results it delivers. No jargon, no fluff.',
+    title: 'Clear Communication & Transparency ',
+    desc: 'We keep everything simple, clear, and transparent for our clients. You receive regular updates, easy-to-understand reports, and performance insights. So, you always know how your marketing is performing and where your investment goes.',
   },
   {
     icon: '📊',
-    title: 'Performance-Focused Delivery',
-    desc: 'We tie our success to your success. Every decision is driven by data — CTR, ROAS, CAC, LTV. We continuously optimise until we hit and exceed your growth targets.',
+    title: 'Focused on Real Results ',
+    desc: 'Our goal is to help your business reach more customers and generate more leads. We continuously monitor campaigns and improve performance. This helps your marketing deliver consistent and measurable growth. ',
   },
   {
     icon: '🤖',
     title: 'AI-Powered + Human Expertise',
-    desc: 'We combine advanced AI tools for research, automation, and predictive analytics with the creativity and strategic thinking of senior marketing experts. The best of both worlds.',
+    desc: 'AI helps us understand trends and analyze large amounts of data quickly. But it’s our experienced marketing team that turns those insights into the right strategy. The result is smarter, data-backed marketing built with real human expertise. ',
   },
 ];
 
@@ -279,20 +284,32 @@ const TESTI = [
 /* ─── FAQs ────────────────────────────────────────── */
 const FAQS = [
   {
-    q: 'How does your pricing work?',
-    a: 'We offer flexible, retainer-based pricing tailored to your business goals and budget. After a free strategy call, we provide a transparent proposal with clear deliverables — no hidden fees, no long-term lock-in on starter packages. Monthly retainers typically range from $500 to $5,000+ depending on the scope of services.',
+    q: 'How can I get started with Kleza’s digital marketing services?',
+    a: 'Contact our digital marketing experts to discuss your business goals, digital marketing needs, and growth strategy. Call +1-XXX-XXX-XXXX or submit a request online to schedule a consultation. ',
   },
   {
-    q: 'How quickly will I see results?',
-    a: 'Paid advertising (Google Ads, Meta Ads) can show measurable results within the first 2–4 weeks. SEO and organic growth typically show significant traction within 3–6 months, with compounding results beyond that. We set realistic milestones upfront and keep you updated with weekly/monthly reports.',
+    q: 'Can Kleza handle international digital marketing campaigns?',
+    a: 'Yes, Kleza has experience managing cross-border campaigns, including SEO, Google Ads, social media, and multi-location strategies. We ensure your brand messaging is consistent while targeting audiences in the USA, Canada, Dubai, and other global markets.',
   },
   {
-    q: 'Which countries do you serve?',
-    a: 'We primarily serve clients in the United States and Canada — including senior-care franchises and healthcare brands — and have an established global presence in Dubai (UAE), the United Kingdom, Singapore, India, Australia, and New Zealand. Our team operates across time zones to provide responsive support wherever you are.',
+    q: 'How does Kleza use AI in digital marketing?',
+    a: 'Kleza leverages AI-powered insights for SEO, Google Ads optimization, and social media campaigns, while combining it with human expertise. This ensures your campaigns are data-driven, precise, and future-ready for audiences. ',
   },
   {
-    q: 'What does your reporting and performance tracking look like?',
-    a: 'Every client receives access to a live custom dashboard (Google Looker Studio / SEMrush) showing real-time campaign data. We also deliver detailed monthly performance reports covering traffic, leads, ROAS, keyword rankings, and actionable insights — presented in a 30-minute strategy call to plan the month ahead.',
+    q: 'What ROI can we expect from partnering with Kleza?',
+    a: 'Our campaigns are data-driven and results-oriented. Across SEO, paid ads, and social media, our clients typically see measurable growth in traffic, leads, and conversions. ',
+  },
+  {
+    q: 'What makes Kleza different from other digital marketing agencies?',
+    a: 'We combine AI-powered insights with human expertise, delivering campaigns that are precise, scalable, and outcome-driven. Every decision is tied to ROI, lead generation, and market growth. ',
+  },
+  {
+    q: 'How long before we see measurable results?',
+    a: 'While some improvements (like SEO technical fixes) are visible within weeks, most ROI-driven campaigns start showing significant results in 3–6 months, depending on industry and budget. ',
+  },
+  {
+    q: 'Do you provide ongoing support and consultation?',
+    a: 'Yes. Our clients receive continuous campaign monitoring, optimization recommendations, and strategy adjustments to ensure consistent growth and measurable results. ',
   },
 ];
 
@@ -343,12 +360,12 @@ export default function App() {
       <div className="hero-left W">
         <div className="h-kicker"><span className="h-dot" />Trusted Since 2014 · 500+ Clients Globally</div>
         <h1 className="h-title">
-          ROI-Driven Digital<br />
-          Marketing.{' '}
-          <span className="t-typed">AI-Powered Growth</span>
+          Grow Faster with<br></br> AI-Powered <br></br>Digital
+        Marketing.{' '}<br></br>
+          <span className="t-typed">ROI Driven Results </span>
         </h1>
         <p className="h-sub">
-          Helping businesses grow with <strong>measurable results</strong>. Trusted by U.S. brands &amp; senior-care franchises — now supporting clients in <strong>Canada, Dubai, and globally</strong> with SEO, Google Ads, Website Development &amp; Social Media Marketing.
+         Helping brands across the <b>United States, Canada, Dubai, Australia & Globally</b> grow with <b>AI-powered digital marketing</b>, delivering measurable results through SEO, Google Ads, website development, and social media marketing. 
         </p>
         <div className="chips">
           <span className="chip">🇺🇸 USA</span>
@@ -358,8 +375,8 @@ export default function App() {
           <span className="chip">⚡ 24hr Strategy</span>
         </div>
         <div className="h-btns">
-          <a href="#contact" className="btn-s btn-solid">Get Free Strategy →</a>
-          <a href="#cases" className="btn-s btn-gh">View Our Work</a>
+          <a href="#contact" className="btn-s btn-solid">Get Free Strategy Call</a>
+          <a href="#cases" className="btn-s btn-gh">Explore our Services </a>
         </div>
         <div className="h-trust">
           <div className="avs">
@@ -383,8 +400,8 @@ export default function App() {
             </div>
           ) : (
             <>
-              <h3>Free Consultation &<br /><span>Get 50% Discount</span></h3>
-              <p className="sub">Tell us about your project — strategy ready in 24 hrs.</p>
+              <h3>Book a Strategy Session &<br /><span>Unlock Your Offer</span></h3>
+              <p className="sub">Share your goals, Kleza’s team will contact you with a tailored strategy in 24 hrs. </p>
               <form onSubmit={submit} noValidate>
                 <div className="row2">
                   <div className="fg"><input type="text" name="name" placeholder="Full Name" className="fi" value={form.name} onChange={ch} required /></div>
@@ -398,7 +415,7 @@ export default function App() {
                   </select>
                 </div>
                 <div className="fg"><textarea name="msg" rows={3} placeholder="Brief project description..." className="fi" value={form.msg} onChange={ch} /></div>
-                <button type="submit" className="sub-btn">LET'S DISCUSS YOUR PROJECT →</button>
+                <button type="submit" className="sub-btn">Get Your Custom Growth Strategy </button>
               </form>
               <div className="f-note">🔒 No spam · No commitment · 100% Free</div>
             </>
@@ -409,7 +426,7 @@ export default function App() {
 
     {/* ═══ CLIENTS TICKER ══════════════════════════════ */}
     <section className="clients-bar">
-      <div className="c-lbl">Trusted by Brands Across the Globe</div>
+      <div className="c-lbl">Trusted by Brands Around the World</div>
       <div className="logo-ticker">
         {all.map((c, k) => (
           <div key={k} className="lt-item">
@@ -442,16 +459,15 @@ export default function App() {
         <div className="why-grid">
           <div className="why-left">
             <span className="eyebrow">🎯 Our Approach</span>
-            <h2>Why Businesses Choose<br /><em>Kleza Solutions</em></h2>
+            <h2>How Kleza Drives<br /><em>Measurable Marketing Results </em></h2>
             <p>
-              We're not just another digital agency. We're a results-obsessed team combining senior marketing strategists, certified ad specialists, and AI-powered tools — with a singular focus on your growth.
-            </p>
+Kleza brings together a team of skilled digital marketers, certified ad professionals, SEO strategists, and creative specialists who leverage AI-powered tools and performance insights to drive real business results. Our approach blends human expertise with smart technology to deliver marketing that works.             </p>
             <div className="why-stats">
-              <div className="wstat"><strong>10+</strong><span>Years in Digital Marketing</span></div>
-              <div className="wstat"><strong>12</strong><span>Countries Served</span></div>
-              <div className="wstat"><strong>4.9★</strong><span>Average Client Rating</span></div>
+              <div className="wstat"><strong>5+ Years</strong><span>Digital Marketing Experience</span></div>
+              <div className="wstat"><strong>280%</strong><span>Growth in Local Search Visibility</span></div>
+              <div className="wstat"><strong>4.9 ★</strong><span>Average Customer Ratings</span></div>
             </div>
-            <a href="#contact" className="btn-s btn-solid" style={{ width: 'fit-content', marginTop: '1.5rem' }}>Start Your Growth Journey →</a>
+            <a href="#contact" className="btn-s btn-solid" style={{ width: 'fit-content', marginTop: '1.5rem' }}>Drive Results with Kleza  </a>
           </div>
           <div className="why-right">
             {WHY.map((w, k) => (
@@ -473,8 +489,8 @@ export default function App() {
       <div className="W">
         <div className="sec-head center">
           <span className="eyebrow">🚀 Our Services</span>
-          <h2>Full-Stack Digital Marketing<br /><em>Powered by AI & Expertise</em></h2>
-          <p>Five core disciplines. One unified strategy. Unstoppable growth.</p>
+          <h2>Complete 360° Digital Marketing<br /><em>Driven by AI Insights & Expert Strategy </em></h2>
+          <p>Five services working together for one growth strategy. </p>
         </div>
         <div className="svc-numbered-list">
           {SERVICES.map((svc, idx) => (
@@ -556,7 +572,7 @@ export default function App() {
                     </li>
                   ))}
                 </ul>
-                <a href="#contact" className="svc-ni-cta" style={{ background: svc.color }}>Get Started →</a>
+                <a href="#contact" className="svc-ni-cta" style={{ background: svc.color }}>{svc.cta}</a>
               </div>
             </div>
           ))}
@@ -569,8 +585,8 @@ export default function App() {
       <div className="W">
         <div className="sec-head center">
           <span className="eyebrow">🏭 Industry Expertise</span>
-          <h2>Verticals We Serve<br /><em>With Proven Results</em></h2>
-          <p>Deep domain knowledge across a range of industries means we speak your language — and know what moves the needle in your market.</p>
+          <h2>Verticals We Drive<br /><em>Growth In </em></h2>
+          <p>From healthcare and senior care to retail and B2B, we know what works in each industry. Our customized strategies help brands grow, engage audiences, and achieve measurable results.</p>
         </div>
         <div className="ind-grid">
           {INDUSTRIES.map((ind, k) => (
@@ -589,7 +605,7 @@ export default function App() {
         <div className="cases-hd">
           <div>
             <span className="eyebrow">📂 Case Studies</span>
-            <h2>Results That Speak<br /><em>Louder Than Promises</em></h2>
+            <h2>Strategies That Delivered <br /><em>Measurable Results </em></h2>
           </div>
           <a href="https://kleza.io" target="_blank" rel="noreferrer" className="view-all-link">View All Case Studies →</a>
         </div>
@@ -629,8 +645,8 @@ export default function App() {
       <div className="W">
         <div className="sec-head center">
           <span className="eyebrow">★ Client Stories</span>
-          <h2>What Our Clients<br /><em>Say About Us</em></h2>
-          <p>Real reviews from businesses we've helped grow across the United States, Canada, Dubai, and beyond.</p>
+          <h2>Stories of Growth,<br /><em>Straight from Our Clients </em></h2>
+          <p>Trusted by brands across <b>global markets</b>, our clients share how Kleza’s <b>strategies drove real business growth.</b> </p>
         </div>
         <div className="testi-featured">
           <div className="testi-featured-quote">&ldquo;</div>
@@ -677,13 +693,13 @@ export default function App() {
         <div className="faq-grid">
           <div className="faq-left">
             <span className="eyebrow">❓ FAQs</span>
-            <h2>Your Questions,<br /><em>Answered</em></h2>
-            <p>Everything you need to know before getting started. Still have questions? <a href="#contact">Chat with our team →</a></p>
+            <h2>Everything You Want<br /><em>To Know</em></h2>
+            <p>From strategy to execution, we answer the questions you have before partnering with us. Still curious?  <a href="#contact"><b>Talk to our experts</b></a></p>
             <div className="faq-cta-card">
               <div className="fcc-icon">💬</div>
-              <h4>Not Sure Where to Start?</h4>
-              <p>Book a free 30-min strategy call — we'll map out a custom growth plan for your business, at no cost.</p>
-              <a href="#contact" className="btn-s btn-solid" style={{ width: '100%', justifyContent: 'center', marginTop: '.5rem' }}>Book Free Call →</a>
+              <h4>Not Sure Where to Begin?</h4>
+              <p>Our digital marketing experts will <b>map a clear strategy</b> to help your business grow efficiently. </p>
+              <a href="#contact" className="btn-s btn-solid" style={{ width: '100%', justifyContent: 'center', marginTop: '.5rem' }}>Book Your Free Strategy Consultation</a>
             </div>
           </div>
           <div className="faq-right">
@@ -706,16 +722,16 @@ export default function App() {
       <div className="cta-glow-l" /><div className="cta-glow-r" />
       <div className="W cta-in">
         <div className="cta-badge">🚀 Limited Spots Available</div>
-        <h2>Ready to make your brand<br /><em>impossible to ignore?</em></h2>
-        <p>Get a free strategy session — our expert will map out exactly how to grow your business online within 24 hours.</p>
+        <h2>Ready to harness<br /><em>AI-driven growth with human expertise?</em></h2>
+        <p>We’ll map out a strategy that turns insights into leads, visibility, and measurable results.</p>
         <div className="cta-btns">
-          <a href="#contact" className="cta-btn-primary">Get Free Strategy Session →</a>
-          <a href="tel:9138002728" className="cta-btn-outline">📞 Call Us Now</a>
+          <a href="#contact" className="cta-btn-primary">Get Your Strategy Session</a>
+          <a href="tel:9138002728" className="cta-btn-outline">📞 Speak With an Expert </a>
         </div>
         <div className="cta-trust">
-          <span>✓ No commitment</span>
-          <span>✓ Strategy in 24hrs</span>
-          <span>✓ 100% Free</span>
+          <span>✓ Led by Experts</span>
+          <span>✓ Proven Results </span>
+          <span>✓ Global Experience </span>
         </div>
       </div>
     </section>
