@@ -35,7 +35,7 @@ if (file_exists($envFile)) {
 
 // ─── CONFIG ──────────────────────────────────────────────────────────────────
 define('BREVO_API_KEY', getenv('BREVO_API_KEY') ?: '');
-define('TO_EMAIL', 'navadeep.manthena@kleza.io');
+define('TO_EMAIL', 'manasa@kleza.io');
 define('TO_NAME', 'Kleza Solutions');
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -97,6 +97,10 @@ $htmlContent = "
 $leadPayload = [
     'sender' => ['name' => 'Kleza Website', 'email' => 'services@kleza.io'],
     'to' => [['email' => TO_EMAIL, 'name' => TO_NAME]],
+    'cc' => [
+        ['email' => 'praveen@kleza.io', 'name' => 'Praveen'],
+        ['email' => 'divya.ayuluri@kleza.io', 'name' => 'Divya'],
+    ],
     'replyTo' => ['email' => $email, 'name' => $name],
     'subject' => "New Lead: $name is interested in $service",
     'htmlContent' => $htmlContent,
