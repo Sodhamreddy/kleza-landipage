@@ -785,7 +785,7 @@ Kleza brings together a team of skilled digital marketers, certified ad professi
             <a href="https://www.linkedin.com/company/kleza-solutions-pvt-ltd/" target="_blank" rel="noreferrer" className="sc" aria-label="LinkedIn">in</a>
             <a href="https://www.instagram.com/klezasolutions/" target="_blank" rel="noreferrer" className="sc" aria-label="Instagram">ig</a>
           </div>
-          <p className="f-copy">©2025 Kleza Solutions Pvt. Ltd. All rights reserved.</p>
+          <p className="f-copy">©2026 Kleza Solutions Pvt. Ltd. All rights reserved.</p>
         </div>
       </div>
     </footer>
