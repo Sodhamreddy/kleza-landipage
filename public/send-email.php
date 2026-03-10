@@ -95,7 +95,7 @@ $htmlContent = "
 
 // ─── 1. Lead notification email → Kleza team ─────────────────────────────────
 $leadPayload = [
-    'sender' => ['name' => 'Kleza Website', 'email' => 'noreply@kleza.io'],
+    'sender' => ['name' => 'Kleza Website', 'email' => 'services@kleza.io'],
     'to' => [['email' => TO_EMAIL, 'name' => TO_NAME]],
     'replyTo' => ['email' => $email, 'name' => $name],
     'subject' => "New Lead: $name is interested in $service",
@@ -225,7 +225,7 @@ $thankYouHtml = "
 ";
 
 $thankYouPayload = [
-    'sender' => ['name' => 'Kleza Solutions', 'email' => 'noreply@kleza.io'],
+    'sender' => ['name' => 'Kleza Solutions', 'email' => 'services@kleza.io'],
     'to' => [['email' => $email, 'name' => $name]],
     'subject' => "We received your request, $name! Our team will reach out within 24 hrs 🚀",
     'htmlContent' => $thankYouHtml,
