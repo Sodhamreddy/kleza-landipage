@@ -20,9 +20,19 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit();
 }
 
+// ─── Load .env file ──────────────────────────────────────────────────────────
+$envFile = __DIR__ . '/.env';
+if (file_exists($envFile)) {
+    $lines = file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    foreach ($lines as $line) {
+        if (str_starts_with(trim($line), '#') || !str_contains($line, '='))
+            continue;
+        [$k, $v] = explode('=', $line, 2);
+        putenv(trim($k) . '=' . trim($v));
+    }
+}
+
 // ─── CONFIG ──────────────────────────────────────────────────────────────────
-// API key is read from a server environment variable — never hardcode it here.
-// On Hostinger: add  SetEnv BREVO_API_KEY xkeysib-xxxxx  to your .htaccess file.
 define('BREVO_API_KEY', getenv('BREVO_API_KEY') ?: '');
 define('TO_EMAIL', 'navadeep.manthena@kleza.io');
 define('TO_NAME', 'Kleza Solutions');
