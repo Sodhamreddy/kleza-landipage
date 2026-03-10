@@ -1,0 +1,21 @@
+# ─── Hostinger .htaccess for Kleza Landing Page ──────────────────────────────
+# 1. Copy this file to your Hostinger public_html root and rename it to .htaccess
+# 2. Replace YOUR_BREVO_API_KEY_HERE with your actual Brevo API key
+# 3. Keep this file OFF Git (never commit it)
+
+# Set Brevo API key as a server environment variable
+SetEnv BREVO_API_KEY YOUR_BREVO_API_KEY_HERE
+
+# ─── Optional: Standard Vite SPA routing (handles React client-side routes) ──
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Allow direct access to existing files and folders (including send-email.php)
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Fallback: all other routes → index.html (SPA)
+  RewriteRule ^ index.html [L]
+</IfModule>

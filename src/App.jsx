@@ -285,7 +285,7 @@ const TESTI = [
 const FAQS = [
   {
     q: 'How can I get started with Kleza’s digital marketing services?',
-    a: 'Contact our digital marketing experts to discuss your business goals, digital marketing needs, and growth strategy. Call +1-XXX-XXX-XXXX or submit a request online to schedule a consultation. ',
+    a: 'Contact our digital marketing experts to discuss your business goals, digital marketing needs, and growth strategy. Call +1 913-800-2728  or submit a request online to schedule a consultation. ',
   },
   {
     q: 'Can Kleza handle international digital marketing campaigns?',
@@ -319,6 +319,8 @@ export default function App() {
   const [shadow, setShadow] = useState(false);
   const [mOpen, setMOpen] = useState(false);
   const [done, setDone] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [formError, setFormError] = useState('');
   const [ti, setTi] = useState(0);
   const [faqOpen, setFaqOpen] = useState(null);
   const [form, setForm] = useState({ name: '', email: '', phone: '', service: '', msg: '' });
@@ -337,7 +339,29 @@ export default function App() {
 
   const close = () => setMOpen(false);
   const ch = e => setForm({ ...form, [e.target.name]: e.target.value });
-  const submit = e => { e.preventDefault(); setDone(true); };
+
+  const submit = async e => {
+    e.preventDefault();
+    setFormError('');
+    setSending(true);
+    try {
+      const res = await fetch('/send-email.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      const json = await res.json();
+      if (json.success) {
+        setDone(true);
+      } else {
+        setFormError(json.message || 'Something went wrong. Please try again.');
+      }
+    } catch (err) {
+      setFormError('Unable to send. Please email us at info@kleza.io directly.');
+    } finally {
+      setSending(false);
+    }
+  };
   const prevT = () => setTi(x => (x - 1 + TESTI.length) % TESTI.length);
   const nextT = () => setTi(x => (x + 1) % TESTI.length);
   const toggleFaq = i => setFaqOpen(faqOpen === i ? null : i);
@@ -415,7 +439,10 @@ export default function App() {
                   </select>
                 </div>
                 <div className="fg"><textarea name="msg" rows={3} placeholder="Brief project description..." className="fi" value={form.msg} onChange={ch} /></div>
-                <button type="submit" className="sub-btn">Get Your Custom Growth Strategy </button>
+                <button type="submit" className="sub-btn" disabled={sending}>
+                  {sending ? '⏳ Sending…' : 'Get Your Custom Growth Strategy'}
+                </button>
+                {formError && <p style={{ color: '#ff4d4f', fontSize: '0.85rem', marginTop: '0.5rem', textAlign: 'center' }}>{formError}</p>}
               </form>
               <div className="f-note">🔒 No spam · No commitment · 100% Free</div>
             </>

@@ -224,7 +224,7 @@ body::before {
   min-height: 100vh;
   margin-top: 68px;
   display: grid;
-  grid-template-columns: 1fr 580px;
+  grid-template-columns: 1fr 680px;
   position: relative;
   overflow: hidden;
 }
@@ -253,7 +253,7 @@ body::before {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 2.5rem 6rem 2.5rem 0rem;
+  padding: 2.5rem 3rem 2.5rem 0rem;
   position: relative;
   z-index: 1;
 }
