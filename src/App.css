@@ -2357,3 +2357,144 @@ body::before {
     padding: 2rem;
   }
 }
+
+/* ── TABLET 768px ───────────────────────────────── */
+@media (max-width: 768px) {
+
+  .W { padding: 0 1.5rem; }
+
+  /* Hero */
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .hero-left {
+    padding: 5.5rem 1.5rem 2rem;
+    text-align: center;
+    align-items: center;
+  }
+  .h-title { font-size: clamp(2rem, 7vw, 2.8rem); }
+  .h-sub   { max-width: 100%; text-align: center; }
+  .chips   { justify-content: center; }
+  .h-btns  { justify-content: center; flex-wrap: wrap; }
+  .h-trust { justify-content: center; }
+  .hero-right { padding: 1rem 1.5rem 3rem; }
+
+  /* Metrics */
+  .metrics-row { flex-wrap: wrap; }
+  .metrics-row .metric-card {
+    flex: 1 1 33%;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+  }
+
+  /* Why */
+  .why-grid  { grid-template-columns: 1fr; gap: 2.5rem; }
+  .why-left  { text-align: center; }
+  .why-stats { justify-content: center; }
+  .why-right { grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  /* Services */
+  .svc-numbered-item,
+  .svc-numbered-item.reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+  }
+  .svc-visual-panel { min-height: 280px; }
+  .svc-ni-content   { padding: 2rem 1.5rem; }
+  .svc-workflow     { flex-wrap: wrap; gap: .75rem; }
+  .svc-wf-line      { display: none; }
+
+  /* Industries */
+  .ind-grid { grid-template-columns: repeat(2, 1fr); gap: .75rem; }
+
+  /* Cases */
+  .cases-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .cases-hd   { flex-direction: column; align-items: flex-start; gap: 1rem; }
+
+  /* Testimonials */
+  .testi-featured   { padding: 2rem 1.5rem; }
+  .testi-mini-grid  { grid-template-columns: 1fr; }
+
+  /* FAQ */
+  .faq-grid    { grid-template-columns: 1fr; gap: 2rem; }
+  .faq-cta-card { display: none; }
+
+  /* CTA */
+  .cta-in { text-align: center; }
+  .cta-btns { flex-direction: column; align-items: center; gap: .875rem; }
+  .cta-btn-primary,
+  .cta-btn-outline { width: 100%; text-align: center; justify-content: center; }
+  .cta-trust { flex-wrap: wrap; justify-content: center; }
+
+  /* Footer */
+  .footer-inner {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+    align-items: center;
+  }
+  .f-address { text-align: center; }
+  .f-right   { align-items: center; }
+
+  /* Form */
+  .row2   { grid-template-columns: 1fr; }
+  .f-card { padding: 1.75rem 1.25rem; }
+}
+
+/* ── MOBILE 480px ───────────────────────────────── */
+@media (max-width: 480px) {
+
+  .W { padding: 0 1rem; }
+
+  /* Hero */
+  .hero-left { padding: 5rem 1rem 1.5rem; }
+  .h-title { font-size: clamp(1.75rem, 8vw, 2.2rem); line-height: 1.15; }
+  .h-btns  { flex-direction: column; width: 100%; }
+  .btn-s   { width: 100%; justify-content: center; }
+  .hero-right { padding: .75rem 1rem 2.5rem; }
+
+  /* Metrics */
+  .metrics-row { flex-direction: column; }
+  .metrics-row .metric-card {
+    flex: 1 1 100%;
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+  }
+  .metrics-row .metric-card:last-child { border-bottom: none; }
+
+  /* Why */
+  .why-right { grid-template-columns: 1fr; }
+
+  /* Services */
+  .svc-visual-panel { min-height: 220px; }
+  .svc-ni-num-label { font-size: 2.5rem; }
+  .svc-ni-title     { font-size: 1.3rem; }
+  .svc-ni-cta       { width: 100%; text-align: center; justify-content: center; }
+
+  /* Industries */
+  .ind-grid { grid-template-columns: repeat(2, 1fr); gap: .5rem; }
+  .ind-card { padding: .875rem .5rem; font-size: .8rem; }
+
+  /* Cases */
+  .case-metrics { flex-wrap: wrap; gap: .75rem; }
+  .cm-item      { flex: 1 1 calc(50% - .375rem); }
+
+  /* Testimonials */
+  .testi-featured     { padding: 1.5rem 1rem; }
+  .testi-featured-text { font-size: .9rem; }
+
+  /* FAQ */
+  .faq-q { font-size: .875rem; padding: 1rem; }
+
+  /* CTA */
+  .cta-in h2 { font-size: clamp(1.5rem, 6vw, 2rem); }
+
+  /* Footer */
+  .footer-inner { padding: 2rem 1rem; }
+  .f-soc { gap: .5rem; }
+  .sc    { width: 36px; height: 36px; font-size: .75rem; }
+
+  /* Form */
+  .f-card  { padding: 1.5rem 1rem; }
+  .sub-btn { font-size: .85rem; }
+}

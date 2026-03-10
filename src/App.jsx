@@ -382,7 +382,6 @@ export default function App() {
     {/* ═══ HERO ════════════════════════════════════════ */}
     <section className="hero" id="home">
       <div className="hero-left W">
-        <div className="h-kicker"><span className="h-dot" />Trusted Since 2014 · 500+ Clients Globally</div>
         <h1 className="h-title">
           Grow Faster with<br></br> AI-Powered <br></br>Digital
         Marketing.{' '}<br></br>
@@ -415,7 +414,6 @@ export default function App() {
 
       <div className="hero-right" id="contact">
         <div className="f-card">
-          <div className="f-badge">🎁 LIMITED TIME — 50% OFF FIRST PROJECT</div>
           {done ? (
             <div className="f-ok">
               <div className="ok">✅</div>
@@ -485,7 +483,7 @@ export default function App() {
       <div className="W">
         <div className="why-grid">
           <div className="why-left">
-            <span className="eyebrow">🎯 Our Approach</span>
+
             <h2>How Kleza Drives<br /><em>Measurable Marketing Results </em></h2>
             <p>
 Kleza brings together a team of skilled digital marketers, certified ad professionals, SEO strategists, and creative specialists who leverage AI-powered tools and performance insights to drive real business results. Our approach blends human expertise with smart technology to deliver marketing that works.             </p>
@@ -515,7 +513,7 @@ Kleza brings together a team of skilled digital marketers, certified ad professi
     <section className="services" id="services">
       <div className="W">
         <div className="sec-head center">
-          <span className="eyebrow">🚀 Our Services</span>
+
           <h2>Complete 360° Digital Marketing<br /><em>Driven by AI Insights & Expert Strategy </em></h2>
           <p>Five services working together for one growth strategy. </p>
         </div>
@@ -611,7 +609,7 @@ Kleza brings together a team of skilled digital marketers, certified ad professi
     <section className="industries" id="industries">
       <div className="W">
         <div className="sec-head center">
-          <span className="eyebrow">🏭 Industry Expertise</span>
+
           <h2>Verticals We Drive<br /><em>Growth In </em></h2>
           <p>From healthcare and senior care to retail and B2B, we know what works in each industry. Our customized strategies help brands grow, engage audiences, and achieve measurable results.</p>
         </div>
@@ -631,7 +629,7 @@ Kleza brings together a team of skilled digital marketers, certified ad professi
       <div className="W">
         <div className="cases-hd">
           <div>
-            <span className="eyebrow">📂 Case Studies</span>
+
             <h2>Strategies That Delivered <br /><em>Measurable Results </em></h2>
           </div>
           <a href="https://kleza.io" target="_blank" rel="noreferrer" className="view-all-link">View All Case Studies →</a>
@@ -671,7 +669,7 @@ Kleza brings together a team of skilled digital marketers, certified ad professi
       <div className="testi-bg-blobs" />
       <div className="W">
         <div className="sec-head center">
-          <span className="eyebrow">★ Client Stories</span>
+
           <h2>Stories of Growth,<br /><em>Straight from Our Clients </em></h2>
           <p>Trusted by brands across <b>global markets</b>, our clients share how Kleza’s <b>strategies drove real business growth.</b> </p>
         </div>
@@ -719,7 +717,7 @@ Kleza brings together a team of skilled digital marketers, certified ad professi
       <div className="W">
         <div className="faq-grid">
           <div className="faq-left">
-            <span className="eyebrow">❓ FAQs</span>
+
             <h2>Everything You Want<br /><em>To Know</em></h2>
             <p>From strategy to execution, we answer the questions you have before partnering with us. Still curious?  <a href="#contact"><b>Talk to our experts</b></a></p>
             <div className="faq-cta-card">
@@ -748,7 +746,7 @@ Kleza brings together a team of skilled digital marketers, certified ad professi
     <section className="cta">
       <div className="cta-glow-l" /><div className="cta-glow-r" />
       <div className="W cta-in">
-        <div className="cta-badge">🚀 Limited Spots Available</div>
+        
         <h2>Ready to harness<br /><em>AI-driven growth with human expertise?</em></h2>
         <p>We’ll map out a strategy that turns insights into leads, visibility, and measurable results.</p>
         <div className="cta-btns">
