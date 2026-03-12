@@ -10,40 +10,40 @@ header('Access-Control-Allow-Headers: Content-Type');
 
 // Handle preflight
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-    http_response_code(200);
-    exit();
+  http_response_code(200);
+  exit();
 }
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    http_response_code(405);
-    echo json_encode(['success' => false, 'message' => 'Method not allowed']);
-    exit();
+  http_response_code(405);
+  echo json_encode(['success' => false, 'message' => 'Method not allowed']);
+  exit();
 }
 
 // ─── Load .env file ──────────────────────────────────────────────────────────
 $envFile = __DIR__ . '/.env';
 if (file_exists($envFile)) {
-    $lines = file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-    foreach ($lines as $line) {
-        $trimmed = trim($line);
-        if ($trimmed === '' || $trimmed[0] === '#' || strpos($trimmed, '=') === false)
-            continue;
-        list($k, $v) = explode('=', $trimmed, 2);
-        putenv(trim($k) . '=' . trim($v));
-    }
+  $lines = file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+  foreach ($lines as $line) {
+    $trimmed = trim($line);
+    if ($trimmed === '' || $trimmed[0] === '#' || strpos($trimmed, '=') === false)
+      continue;
+    list($k, $v) = explode('=', $trimmed, 2);
+    putenv(trim($k) . '=' . trim($v));
+  }
 }
 
 // ─── CONFIG ──────────────────────────────────────────────────────────────────
 define('BREVO_API_KEY', getenv('BREVO_API_KEY') ?: '');
-define('TO_EMAIL', 'manasa@kleza.io');
+define('TO_EMAIL', 'navadeep.manthena@kleza.io');
 define('TO_NAME', 'Kleza Solutions');
 // ─────────────────────────────────────────────────────────────────────────────
 
 // Guard: refuse to run if key is missing
 if (!BREVO_API_KEY) {
-    http_response_code(500);
-    echo json_encode(['success' => false, 'message' => 'Mail service not configured']);
-    exit();
+  http_response_code(500);
+  echo json_encode(['success' => false, 'message' => 'Mail service not configured']);
+  exit();
 }
 
 // Read and sanitise input
@@ -51,9 +51,9 @@ $raw = file_get_contents('php://input');
 $data = json_decode($raw, true);
 
 if (!$data) {
-    http_response_code(400);
-    echo json_encode(['success' => false, 'message' => 'Invalid request body']);
-    exit();
+  http_response_code(400);
+  echo json_encode(['success' => false, 'message' => 'Invalid request body']);
+  exit();
 }
 
 $name = htmlspecialchars(trim($data['name'] ?? ''), ENT_QUOTES, 'UTF-8');
@@ -64,9 +64,9 @@ $msg = htmlspecialchars(trim($data['msg'] ?? ''), ENT_QUOTES, 'UTF-8');
 
 // Basic validation
 if (empty($name) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    http_response_code(422);
-    echo json_encode(['success' => false, 'message' => 'Name and a valid email are required']);
-    exit();
+  http_response_code(422);
+  echo json_encode(['success' => false, 'message' => 'Name and a valid email are required']);
+  exit();
 }
 
 // ─── Build email HTML ────────────────────────────────────────────────────────
@@ -95,28 +95,28 @@ $htmlContent = "
 
 // ─── 1. Lead notification email → Kleza team ─────────────────────────────────
 $leadPayload = [
-    'sender' => ['name' => 'Kleza Website', 'email' => 'services@kleza.io'],
-    'to' => [['email' => TO_EMAIL, 'name' => TO_NAME]],
-    'cc' => [
-        ['email' => 'praveen@kleza.io', 'name' => 'Praveen'],
-        ['email' => 'divya.ayuluri@kleza.io', 'name' => 'Divya'],
-    ],
-    'replyTo' => ['email' => $email, 'name' => $name],
-    'subject' => "New Lead: $name is interested in $service",
-    'htmlContent' => $htmlContent,
+  'sender' => ['name' => 'Kleza Website', 'email' => 'services@kleza.io'],
+  'to' => [['email' => TO_EMAIL, 'name' => TO_NAME]],
+  'cc' => [
+    ['email' => 'praveen@kleza.io', 'name' => 'Praveen'],
+    ['email' => 'divya.ayuluri@kleza.io', 'name' => 'Divya'],
+  ],
+  'replyTo' => ['email' => $email, 'name' => $name],
+  'subject' => "New Lead: $name is interested in $service",
+  'htmlContent' => $htmlContent,
 ];
 
 $ch = curl_init('https://api.brevo.com/v3/smtp/email');
 curl_setopt_array($ch, [
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_POST => true,
-    CURLOPT_POSTFIELDS => json_encode($leadPayload),
-    CURLOPT_HTTPHEADER => [
-        'accept: application/json',
-        'api-key: ' . BREVO_API_KEY,
-        'content-type: application/json',
-    ],
-    CURLOPT_TIMEOUT => 15,
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_POST => true,
+  CURLOPT_POSTFIELDS => json_encode($leadPayload),
+  CURLOPT_HTTPHEADER => [
+    'accept: application/json',
+    'api-key: ' . BREVO_API_KEY,
+    'content-type: application/json',
+  ],
+  CURLOPT_TIMEOUT => 15,
 ]);
 
 $response = curl_exec($ch);
@@ -125,19 +125,19 @@ $curlError = curl_error($ch);
 curl_close($ch);
 
 if ($curlError) {
-    http_response_code(500);
-    echo json_encode(['success' => false, 'message' => 'Mail service connection error']);
-    exit();
+  http_response_code(500);
+  echo json_encode(['success' => false, 'message' => 'Mail service connection error']);
+  exit();
 }
 
 if (!($httpStatus >= 200 && $httpStatus < 300)) {
-    $brevoBody = json_decode($response, true);
-    http_response_code(500);
-    echo json_encode([
-        'success' => false,
-        'message' => $brevoBody['message'] ?? 'Failed to send email',
-    ]);
-    exit();
+  $brevoBody = json_decode($response, true);
+  http_response_code(500);
+  echo json_encode([
+    'success' => false,
+    'message' => $brevoBody['message'] ?? 'Failed to send email',
+  ]);
+  exit();
 }
 
 // ─── 2. Thank-you email → form submitter ─────────────────────────────────────
@@ -229,23 +229,23 @@ $thankYouHtml = "
 ";
 
 $thankYouPayload = [
-    'sender' => ['name' => 'Kleza Solutions', 'email' => 'services@kleza.io'],
-    'to' => [['email' => $email, 'name' => $name]],
-    'subject' => "We received your request, $name! Our team will reach out within 24 hrs 🚀",
-    'htmlContent' => $thankYouHtml,
+  'sender' => ['name' => 'Kleza Solutions', 'email' => 'services@kleza.io'],
+  'to' => [['email' => $email, 'name' => $name]],
+  'subject' => "We received your request, $name! Our team will reach out within 24 hrs 🚀",
+  'htmlContent' => $thankYouHtml,
 ];
 
 $ch2 = curl_init('https://api.brevo.com/v3/smtp/email');
 curl_setopt_array($ch2, [
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_POST => true,
-    CURLOPT_POSTFIELDS => json_encode($thankYouPayload),
-    CURLOPT_HTTPHEADER => [
-        'accept: application/json',
-        'api-key: ' . BREVO_API_KEY,
-        'content-type: application/json',
-    ],
-    CURLOPT_TIMEOUT => 15,
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_POST => true,
+  CURLOPT_POSTFIELDS => json_encode($thankYouPayload),
+  CURLOPT_HTTPHEADER => [
+    'accept: application/json',
+    'api-key: ' . BREVO_API_KEY,
+    'content-type: application/json',
+  ],
+  CURLOPT_TIMEOUT => 15,
 ]);
 curl_exec($ch2);   // fire-and-forget — don't fail the response if this one errors
 curl_close($ch2);

@@ -318,7 +318,6 @@ export default function App() {
 
   const [shadow, setShadow] = useState(false);
   const [mOpen, setMOpen] = useState(false);
-  const [done, setDone] = useState(false);
   const [sending, setSending] = useState(false);
   const [formError, setFormError] = useState('');
   const [ti, setTi] = useState(0);
@@ -350,14 +349,22 @@ export default function App() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       });
-      const json = await res.json();
+      const text = await res.text();
+      let json;
+      try {
+        json = JSON.parse(text);
+      } catch (e) {
+        throw new Error(`Server returned non-JSON response: ${text.slice(0, 100)}`);
+      }
+
       if (json.success) {
-        setDone(true);
+        window.location.href = '/thank-you.html';
       } else {
         setFormError(json.message || 'Something went wrong. Please try again.');
       }
     } catch (err) {
-      setFormError('Unable to send. Please email us at info@kleza.io directly.');
+      console.error('Submission error:', err);
+      setFormError('Unable to send. Please ensure the mail service is configured or try again later.');
     } finally {
       setSending(false);
     }
@@ -414,37 +421,27 @@ export default function App() {
 
       <div className="hero-right" id="contact">
         <div className="f-card">
-          {done ? (
-            <div className="f-ok">
-              <div className="ok">✅</div>
-              <h3>You're In!</h3>
-              <p>Our expert will reach out within 24 hours. Let's build something great.</p>
+          <h3>Book a Strategy Session &<br /><span>Unlock Your Offer</span></h3>
+          <p className="sub">Share your goals, Kleza’s team will contact you with a tailored strategy in 24 hrs. </p>
+          <form onSubmit={submit} noValidate>
+            <div className="row2">
+              <div className="fg"><input type="text" name="name" placeholder="Full Name" className="fi" value={form.name} onChange={ch} required /></div>
+              <div className="fg"><input type="email" name="email" placeholder="Work Email" className="fi" value={form.email} onChange={ch} required /></div>
             </div>
-          ) : (
-            <>
-              <h3>Book a Strategy Session &<br /><span>Unlock Your Offer</span></h3>
-              <p className="sub">Share your goals, Kleza’s team will contact you with a tailored strategy in 24 hrs. </p>
-              <form onSubmit={submit} noValidate>
-                <div className="row2">
-                  <div className="fg"><input type="text" name="name" placeholder="Full Name" className="fi" value={form.name} onChange={ch} required /></div>
-                  <div className="fg"><input type="email" name="email" placeholder="Work Email" className="fi" value={form.email} onChange={ch} required /></div>
-                </div>
-                <div className="fg"><input type="tel" name="phone" placeholder="Phone Number" className="fi" value={form.phone} onChange={ch} /></div>
-                <div className="fg">
-                  <select name="service" className="fi" value={form.service} onChange={ch}>
-                    <option value="">Select a Service</option>
-                    {SERVICES.map(s => <option key={s.label}>{s.label}</option>)}
-                  </select>
-                </div>
-                <div className="fg"><textarea name="msg" rows={3} placeholder="Brief project description..." className="fi" value={form.msg} onChange={ch} /></div>
-                <button type="submit" className="sub-btn" disabled={sending}>
-                  {sending ? '⏳ Sending…' : 'Get Your Custom Growth Strategy'}
-                </button>
-                {formError && <p style={{ color: '#ff4d4f', fontSize: '0.85rem', marginTop: '0.5rem', textAlign: 'center' }}>{formError}</p>}
-              </form>
-              <div className="f-note">🔒 No spam · No commitment · 100% Free</div>
-            </>
-          )}
+            <div className="fg"><input type="tel" name="phone" placeholder="Phone Number" className="fi" value={form.phone} onChange={ch} /></div>
+            <div className="fg">
+              <select name="service" className="fi" value={form.service} onChange={ch}>
+                <option value="">Select a Service</option>
+                {SERVICES.map(s => <option key={s.label}>{s.label}</option>)}
+              </select>
+            </div>
+            <div className="fg"><textarea name="msg" rows={3} placeholder="Brief project description..." className="fi" value={form.msg} onChange={ch} /></div>
+            <button type="submit" className="sub-btn" disabled={sending}>
+              {sending ? '⏳ Sending…' : 'Get Your Custom Growth Strategy'}
+            </button>
+            {formError && <p style={{ color: '#ff4d4f', fontSize: '0.85rem', marginTop: '0.5rem', textAlign: 'center' }}>{formError}</p>}
+          </form>
+          <div className="f-note">🔒 No spam · No commitment · 100% Free</div>
         </div>
       </div>
     </section>

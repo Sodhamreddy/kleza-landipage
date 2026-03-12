@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You | Kleza Solutions</title>
+  <meta name="description" content="Thank you for contacting Kleza Solutions. Our team will reach out within 24 hours." />
+  <!-- Prevent search engines from indexing the thank-you page -->
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- ══════════════════════════════════════════════════════
+       GOOGLE ADS CONVERSION TRACKING
+       Replace GOOGLE_ADS_CONVERSION_ID and GOOGLE_ADS_CONVERSION_LABEL
+       with your actual values from Google Ads → Tools → Conversions
+  ════════════════════════════════════════════════════════ -->
+  <!-- Global site tag (gtag.js) - Google Ads -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=AW-GOOGLE_ADS_CONVERSION_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-GOOGLE_ADS_CONVERSION_ID');
+    gtag('event', 'conversion', {
+      'send_to': 'AW-GOOGLE_ADS_CONVERSION_ID/GOOGLE_ADS_CONVERSION_LABEL'
+    });
+  </script> -->
+
+  <!-- ══════════════════════════════════════════════════════
+       GOOGLE ANALYTICS 4 (GA4) CONVERSION EVENT
+       Replace GA4_MEASUREMENT_ID with your actual GA4 ID (e.g. G-XXXXXXXX)
+  ════════════════════════════════════════════════════════ -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA4_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA4_MEASUREMENT_ID');
+    gtag('event', 'generate_lead', {
+      'event_category': 'Form',
+      'event_label': 'Contact Form Submission'
+    });
+  </script> -->
+
+  <!-- ══════════════════════════════════════════════════════
+       META (FACEBOOK) PIXEL CONVERSION TRACKING
+       Replace META_PIXEL_ID with your actual Meta Pixel ID
+  ════════════════════════════════════════════════════════ -->
+  <!-- <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'META_PIXEL_ID');
+    fbq('track', 'Lead');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=META_PIXEL_ID&ev=Lead&noscript=1"/></noscript> -->
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue: #0066FF;
+      --blue-dark: #0047CC;
+      --bg: #060918;
+      --surface: #0d1226;
+      --border: rgba(255,255,255,0.08);
+      --text: #e8eaf0;
+      --muted: #8b90a7;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ── glowing background blobs ── */
+    .bg-blob {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(100px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .blob-1 { width: 500px; height: 500px; background: rgba(0,102,255,0.18); top: -120px; left: -100px; }
+    .blob-2 { width: 400px; height: 400px; background: rgba(14,165,233,0.12); bottom: -80px; right: -80px; }
+
+    /* ── nav ── */
+    nav {
+      position: relative;
+      z-index: 10;
+      padding: 1.1rem 2rem;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+    nav img { height: 36px; }
+
+    /* ── main container ── */
+    .container {
+      position: relative;
+      z-index: 1;
+      min-height: calc(100vh - 65px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    /* ── checkmark circle ── */
+    .check-wrap {
+      width: 96px;
+      height: 96px;
+      background: linear-gradient(135deg, #0066FF22, #0ea5e922);
+      border: 2px solid rgba(0,102,255,0.35);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.8rem;
+      animation: popIn 0.5s cubic-bezier(0.34,1.56,0.64,1) both;
+    }
+    .check-wrap svg {
+      width: 48px;
+      height: 48px;
+    }
+    @keyframes popIn {
+      from { transform: scale(0); opacity: 0; }
+      to   { transform: scale(1); opacity: 1; }
+    }
+
+    /* ── badge ── */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(0,102,255,0.12);
+      border: 1px solid rgba(0,102,255,0.3);
+      color: #60a5fa;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      margin-bottom: 1.2rem;
+      animation: fadeUp 0.5s 0.1s both;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2.8rem 2.5rem 2.5rem;
+      max-width: 520px;
+      width: 100%;
+      box-shadow: 0 0 60px rgba(0,102,255,0.08), 0 24px 80px rgba(0,0,0,0.4);
+      animation: fadeUp 0.45s 0.05s both;
+    }
+
+    h1 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 0.8rem;
+    }
+    h1 em {
+      font-style: normal;
+      background: linear-gradient(90deg, #0066FF, #38bdf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 0.97rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    /* ── next steps ── */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 2rem;
+      text-align: left;
+    }
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 0.85rem 1rem;
+    }
+    .step-num {
+      width: 28px;
+      height: 28px;
+      min-width: 28px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0066FF, #0ea5e9);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .step-body h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.15rem; }
+    .step-body p  { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+
+    /* ── CTA button ── */
+    .btn-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, #0066FF, #0047CC);
+      color: #fff;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 10px;
+      padding: 0.85rem 1.8rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.18s, box-shadow 0.18s;
+      box-shadow: 0 4px 20px rgba(0,102,255,0.35);
+    }
+    .btn-home:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,102,255,0.5); }
+
+    /* ── trust strip ── */
+    .trust {
+      margin-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+    .trust span { display: flex; align-items: center; gap: 0.3rem; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 480px) {
+      .card { padding: 2rem 1.4rem 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background blobs -->
+  <div class="bg-blob blob-1"></div>
+  <div class="bg-blob blob-2"></div>
+
+  <!-- Nav -->
+  <nav>
+    <a href="/">
+      <img src="https://kleza.io/wp-content/uploads/2021/09/logo.png" alt="Kleza Solutions" />
+    </a>
+  </nav>
+
+  <!-- Main content -->
+  <div class="container">
+    <div class="card">
+      <!-- Animated check -->
+      <div class="check-wrap">
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="22" stroke="url(#cg)" stroke-width="2"/>
+          <path d="M14 24.5L21 31.5L34 17" stroke="url(#cg2)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <defs>
+            <linearGradient id="cg" x1="2" y1="2" x2="46" y2="46" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#0066FF"/>
+              <stop offset="1" stop-color="#38bdf8"/>
+            </linearGradient>
+            <linearGradient id="cg2" x1="14" y1="17" x2="34" y2="31.5" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#0066FF"/>
+              <stop offset="1" stop-color="#38bdf8"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <div class="badge">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor"><circle cx="5" cy="5" r="5"/></svg>
+        Form Submitted Successfully
+      </div>
+
+      <h1>You're All Set!<br /><em>We'll Be in Touch Soon</em></h1>
+      <p class="subtitle">
+        Thank you for reaching out to Kleza Solutions. Our digital marketing
+        experts will review your details and get back to you within <strong style="color:#e8eaf0">24 hours</strong>
+        with a tailored growth strategy.
+      </p>
+
+      <!-- What happens next -->
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <h4>Strategy Review</h4>
+            <p>Our team analyses your business and goals to prepare a custom marketing plan.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <h4>You'll Receive a Call / Email</h4>
+            <p>An expert will reach out within 24 hours to schedule your free strategy session.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <h4>Kickstart Your Growth</h4>
+            <p>Get a personalised roadmap and start driving measurable results for your business.</p>
+          </div>
+        </div>
+      </div>
+
+      <a href="/" class="btn-home">← Back to Home</a>
+
+      <div class="trust">
+        <span>🔒 100% Confidential</span>
+        <span>⚡ 24hr Response</span>
+        <span>🏆 500+ Happy Clients</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
