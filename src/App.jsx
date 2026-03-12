@@ -625,7 +625,7 @@ Kleza brings together a team of skilled digital marketers, certified ad professi
     </section>
 
     {/* ═══ CASE STUDIES ════════════════════════════════ */}
-    <section className="cases" id="cases">
+    {/* <section className="cases" id="cases">
       <div className="W">
         <div className="cases-hd">
           <div>
@@ -662,7 +662,7 @@ Kleza brings together a team of skilled digital marketers, certified ad professi
           ))}
         </div>
       </div>
-    </section>
+    </section> */}
 
     {/* ═══ TESTIMONIALS ════════════════════════════════ */}
     <section className="testimonials" id="testimonials">
