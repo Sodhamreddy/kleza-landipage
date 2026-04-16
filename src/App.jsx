@@ -388,35 +388,12 @@ export default function App() {
 
     {/* ═══ HERO ════════════════════════════════════════ */}
     <section className="hero" id="home">
-      <div className="hero-left W">
+      <div className="hero-title-wrap">
         <h1 className="h-title">
           Grow Faster with<br></br> AI-Powered <br></br>Digital
         Marketing.{' '}<br></br>
           <span className="t-typed">ROI Driven Results </span>
         </h1>
-        <p className="h-sub">
-         Helping brands across the <b>United States, Canada, Dubai, Australia & Globally</b> grow with <b>AI-powered digital marketing</b>, delivering measurable results through SEO, Google Ads, website development, and social media marketing. 
-        </p>
-        <div className="chips">
-          <span className="chip">🇺🇸 USA</span>
-          <span className="chip">🇨🇦 Canada</span>
-          <span className="chip">🇦🇪 Dubai</span>
-          <span className="chip">🌏 Global</span>
-          <span className="chip">⚡ 24hr Strategy</span>
-        </div>
-        <div className="h-btns">
-          <a href="#contact" className="btn-s btn-solid">Get Free Strategy Call</a>
-          <a href="#cases" className="btn-s btn-gh">Explore our Services </a>
-        </div>
-        <div className="h-trust">
-          <div className="avs">
-            {['J', 'M', 'X', 'P'].map((l, k) => <div key={k} className="av">{l}</div>)}
-          </div>
-          <div className="t-copy">
-            <strong>500+ Happy Clients</strong>
-            <span style={{ color: '#F59E0B' }}>★★★★★</span>&nbsp;4.9 / 5
-          </div>
-        </div>
       </div>
 
       <div className="hero-right" id="contact">
@@ -442,6 +419,32 @@ export default function App() {
             {formError && <p style={{ color: '#ff4d4f', fontSize: '0.85rem', marginTop: '0.5rem', textAlign: 'center' }}>{formError}</p>}
           </form>
           <div className="f-note">🔒 No spam · No commitment · 100% Free</div>
+        </div>
+      </div>
+
+      <div className="hero-content">
+        <p className="h-sub">
+         Helping brands across the <b>United States, Canada, Dubai, Australia &amp; Globally</b> grow with <b>AI-powered digital marketing</b>, delivering measurable results through SEO, Google Ads, website development, and social media marketing.
+        </p>
+        <div className="chips">
+          <span className="chip">🇺🇸 USA</span>
+          <span className="chip">🇨🇦 Canada</span>
+          <span className="chip">🇦🇪 Dubai</span>
+          <span className="chip">🌏 Global</span>
+          <span className="chip">⚡ 24hr Strategy</span>
+        </div>
+        <div className="h-btns">
+          <a href="#contact" className="btn-s btn-solid">Get Free Strategy Call</a>
+          <a href="#cases" className="btn-s btn-gh">Explore our Services </a>
+        </div>
+        <div className="h-trust">
+          <div className="avs">
+            {['J', 'M', 'X', 'P'].map((l, k) => <div key={k} className="av">{l}</div>)}
+          </div>
+          <div className="t-copy">
+            <strong>500+ Happy Clients</strong>
+            <span style={{ color: '#F59E0B' }}>★★★★★</span>&nbsp;4.9 / 5
+          </div>
         </div>
       </div>
     </section>
