@@ -342,6 +342,10 @@ export default function App() {
   const submit = async e => {
     e.preventDefault();
     setFormError('');
+    if (!form.name.trim() || !form.email.trim() || !form.phone.trim() || !form.service || !form.msg.trim()) {
+      setFormError('Please fill in all fields before submitting.');
+      return;
+    }
     setSending(true);
     try {
       const res = await fetch('/send-email.php', {
@@ -405,14 +409,14 @@ export default function App() {
               <div className="fg"><input type="text" name="name" placeholder="Full Name" className="fi" value={form.name} onChange={ch} required /></div>
               <div className="fg"><input type="email" name="email" placeholder="Work Email" className="fi" value={form.email} onChange={ch} required /></div>
             </div>
-            <div className="fg"><input type="tel" name="phone" placeholder="Phone Number" className="fi" value={form.phone} onChange={ch} /></div>
+            <div className="fg"><input type="tel" name="phone" placeholder="Phone Number" className="fi" value={form.phone} onChange={ch} required /></div>
             <div className="fg">
-              <select name="service" className="fi" value={form.service} onChange={ch}>
+              <select name="service" className="fi" value={form.service} onChange={ch} required>
                 <option value="">Select a Service</option>
                 {SERVICES.map(s => <option key={s.label}>{s.label}</option>)}
               </select>
             </div>
-            <div className="fg"><textarea name="msg" rows={3} placeholder="Brief project description..." className="fi" value={form.msg} onChange={ch} /></div>
+            <div className="fg"><textarea name="msg" rows={3} placeholder="Brief project description..." className="fi" value={form.msg} onChange={ch} required /></div>
             <button type="submit" className="sub-btn" disabled={sending}>
               {sending ? '⏳ Sending…' : 'Get Your Custom Growth Strategy'}
             </button>
